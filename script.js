@@ -24,7 +24,7 @@ const labels = {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (WHATSAPP_NUMBER === "5210000000000") {
+  if (WHATSAPP_NUMBER === +52 656 185 7602) {
     alert("Antes de publicar, cambia WHATSAPP_NUMBER en script.js por tu número de WhatsApp.");
     return;
   }
@@ -32,7 +32,7 @@ form.addEventListener("submit", (event) => {
   const data = new FormData(form);
   let message = "✨ BUSINESS PORTRAIT BRIEF ✨\n\n";
 
-  for (const [key, value] of data.entries()) {
+  for (const [key, value] of data.entries()) {q
     const clean = String(value).trim();
 
     // Solo agrega campos que sí fueron respondidos.
