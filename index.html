@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#7c5cff" />
+  <title>Business Portrait Brief</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow">BUSINESS PORTRAIT BRIEF</span>
+      <h1>Cuéntame sobre ti y tu marca ✨</h1>
+      <p>
+        Este formulario me ayudará a conocer tu personalidad, tus servicios,
+        tu cliente ideal y la imagen que deseas proyectar.
+      </p>
+    </section>
+
+    <form id="briefForm" class="card">
+      <div class="field">
+        <label for="nombre">1. Nombre o nombre profesional *</label>
+        <input id="nombre" name="nombre" required placeholder="Escribe tu nombre" />
+      </div>
+
+      <div class="field">
+        <label for="personalidad">2. ¿Cómo describirías tu personalidad? *</label>
+        <textarea id="personalidad" name="personalidad" required
+          placeholder="Ej. creativa, elegante, divertida, profesional..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="colores">3. ¿Qué atmósferas, estilos o colores te gustan?</label>
+        <textarea id="colores" name="colores"
+          placeholder="Ej. tonos neutros, rosa, minimalista, elegante, cálido..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="dedica">4. ¿A qué te dedicas? *</label>
+        <textarea id="dedica" name="dedica" required
+          placeholder="Cuéntame brevemente qué haces"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="vender">5. ¿Qué quieres vender o qué quieres que te compren/contraten? *</label>
+        <textarea id="vender" name="vender" required
+          placeholder="Servicios, productos o aquello que quieres impulsar"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="beneficios">6. ¿Qué beneficios obtienen tus clientes?</label>
+        <textarea id="beneficios" name="beneficios"
+          placeholder="¿Qué mejora, cambia o consigue tu cliente contigo?"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="valor">7. ¿Cuál es tu propuesta de valor o qué te hace diferente?</label>
+        <textarea id="valor" name="valor"
+          placeholder="¿Por qué deberían elegirte a ti?"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="problemas">8. ¿Qué problemas o necesidades resuelves?</label>
+        <textarea id="problemas" name="problemas"
+          placeholder="Describe el problema principal que ayudas a resolver"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="cliente">9. Describe a tu cliente ideal</label>
+        <textarea id="cliente" name="cliente"
+          placeholder="Edad aproximada, gustos, costumbres, intereses, sexo si es relevante..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="imagen">10. ¿Qué imagen quieres proyectar?</label>
+        <textarea id="imagen" name="imagen"
+          placeholder="Ej. profesional, confiable, moderna, elegante, cercana..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="emociones">11. ¿Qué emociones quieres despertar en tus clientes?</label>
+        <textarea id="emociones" name="emociones"
+          placeholder="Ej. confianza, tranquilidad, inspiración, emoción..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="redes">12. Redes sociales o página web</label>
+        <textarea id="redes" name="redes"
+          placeholder="Instagram, Facebook, TikTok, sitio web..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="referencias">13. Referencias visuales que te gusten</label>
+        <textarea id="referencias" name="referencias"
+          placeholder="Links, marcas, estilos o cuentas que te inspiren"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="primary">Enviar respuestas</button>
+        <button type="reset" class="secondary">Limpiar</button>
+      </div>
+
+      <p class="hint">
+        Al enviar se abrirá WhatsApp con todas las respuestas listas para compartir.
+      </p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
