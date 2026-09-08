@@ -8,105 +8,142 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-shape bg-shape-1"></div>
+  <div class="bg-shape bg-shape-2"></div>
+
   <main class="page">
     <section class="hero">
+      <div class="hero-top">
+        <span class="badge">VIBORDER BRIEF</span>
+        <span class="mini-badge">3–5 min</span>
+      </div>
+
       <div class="logo-card">
         <img src="logo-viborder.jpg" alt="Logo Viborder" class="brand-logo" />
       </div>
-      <span class="eyebrow">VIBORDER</span>
-      <h1>Cuéntame sobre tu proyecto ✨</h1>
-      <p>
-        Este formulario me ayudará a conocer tu personalidad, tus servicios,
+
+      <h1>Cuéntame sobre tu proyecto</h1>
+      <p class="hero-text">
+        Este formulario me ayudará a conocer mejor tu esencia, tus servicios,
         tu cliente ideal y la imagen que deseas proyectar.
       </p>
     </section>
 
-    <form id="briefForm" class="card">
-      <div class="field">
-        <label for="nombre">1. Nombre o nombre profesional *</label>
-        <input id="nombre" name="nombre" required placeholder="Escribe tu nombre" />
+    <form id="briefForm" class="form-card">
+      <div class="form-header">
+        <div>
+          <p class="form-kicker">Formulario de marca</p>
+          <h2>Información general</h2>
+        </div>
+        <p class="form-subtext">
+          Completa solo con la información que quieras compartir.
+        </p>
       </div>
 
-      <div class="field">
-        <label for="personalidad">2. ¿Cómo describirías tu personalidad? *</label>
-        <textarea id="personalidad" name="personalidad" required
-          placeholder="Ej. creativa, elegante, divertida, profesional..."></textarea>
-      </div>
+      <section class="form-section">
+        <div class="section-title">
+          <span class="dot"></span>
+          <h3>Tu identidad</h3>
+        </div>
 
-      <div class="field">
-        <label for="colores">3. ¿Qué atmósferas, estilos o colores te gustan?</label>
-        <textarea id="colores" name="colores"
-          placeholder="Ej. tonos neutros, elegante, moderno, cálido..."></textarea>
-      </div>
+        <div class="grid two-cols">
+          <div class="field">
+            <label for="nombre">Nombre o nombre profesional *</label>
+            <input id="nombre" name="nombre" required placeholder="Escribe tu nombre" />
+          </div>
 
-      <div class="field">
-        <label for="dedica">4. ¿A qué te dedicas? *</label>
-        <textarea id="dedica" name="dedica" required
-          placeholder="Cuéntame brevemente qué haces"></textarea>
-      </div>
+          <div class="field">
+            <label for="redes">Redes sociales o página web</label>
+            <input id="redes" name="redes" placeholder="Instagram, Facebook, sitio web..." />
+          </div>
+        </div>
 
-      <div class="field">
-        <label for="vender">5. ¿Qué quieres vender o qué quieres que te compren/contraten? *</label>
-        <textarea id="vender" name="vender" required
-          placeholder="Servicios, productos o aquello que quieres impulsar"></textarea>
-      </div>
+        <div class="field">
+          <label for="personalidad">¿Cómo describirías tu personalidad? *</label>
+          <textarea id="personalidad" name="personalidad" required placeholder="Ej. creativa, profesional, elegante, relajada..."></textarea>
+        </div>
 
-      <div class="field">
-        <label for="beneficios">6. ¿Qué beneficios obtienen tus clientes?</label>
-        <textarea id="beneficios" name="beneficios"
-          placeholder="¿Qué mejora, cambia o consigue tu cliente contigo?"></textarea>
-      </div>
+        <div class="field">
+          <label for="imagen">¿Qué imagen quieres proyectar?</label>
+          <textarea id="imagen" name="imagen" placeholder="Ej. moderna, confiable, cercana, profesional..."></textarea>
+        </div>
 
-      <div class="field">
-        <label for="valor">7. ¿Cuál es tu propuesta de valor o qué te hace diferente?</label>
-        <textarea id="valor" name="valor"
-          placeholder="¿Por qué deberían elegirte a ti?"></textarea>
-      </div>
+        <div class="field">
+          <label for="emociones">¿Qué emociones quieres despertar en tus clientes?</label>
+          <textarea id="emociones" name="emociones" placeholder="Ej. confianza, emoción, tranquilidad, inspiración..."></textarea>
+        </div>
+      </section>
 
-      <div class="field">
-        <label for="problemas">8. ¿Qué problemas o necesidades resuelves?</label>
-        <textarea id="problemas" name="problemas"
-          placeholder="Describe el problema principal que ayudas a resolver"></textarea>
-      </div>
+      <section class="form-section">
+        <div class="section-title">
+          <span class="dot"></span>
+          <h3>Tu negocio</h3>
+        </div>
 
-      <div class="field">
-        <label for="cliente">9. Describe a tu cliente ideal</label>
-        <textarea id="cliente" name="cliente"
-          placeholder="Edad aproximada, gustos, costumbres, intereses..."></textarea>
-      </div>
+        <div class="field">
+          <label for="dedica">¿A qué te dedicas? *</label>
+          <textarea id="dedica" name="dedica" required placeholder="Cuéntame brevemente qué haces"></textarea>
+        </div>
 
-      <div class="field">
-        <label for="imagen">10. ¿Qué imagen quieres proyectar?</label>
-        <textarea id="imagen" name="imagen"
-          placeholder="Ej. profesional, confiable, moderna, elegante, cercana..."></textarea>
-      </div>
+        <div class="field">
+          <label for="vender">¿Qué quieres vender o qué quieres que te compren/contraten? *</label>
+          <textarea id="vender" name="vender" required placeholder="Servicios, productos o lo que deseas impulsar"></textarea>
+        </div>
 
-      <div class="field">
-        <label for="emociones">11. ¿Qué emociones quieres despertar en tus clientes?</label>
-        <textarea id="emociones" name="emociones"
-          placeholder="Ej. confianza, tranquilidad, inspiración, emoción..."></textarea>
-      </div>
+        <div class="grid two-cols">
+          <div class="field">
+            <label for="beneficios">¿Qué beneficios obtienen tus clientes?</label>
+            <textarea id="beneficios" name="beneficios" placeholder="¿Qué mejora o consigue tu cliente contigo?"></textarea>
+          </div>
 
-      <div class="field">
-        <label for="redes">12. Redes sociales o página web</label>
-        <textarea id="redes" name="redes"
-          placeholder="Instagram, Facebook, TikTok, sitio web..."></textarea>
-      </div>
+          <div class="field">
+            <label for="valor">¿Cuál es tu propuesta de valor o qué te hace diferente?</label>
+            <textarea id="valor" name="valor" placeholder="¿Por qué deberían elegirte a ti?"></textarea>
+          </div>
+        </div>
 
-      <div class="field">
-        <label for="referencias">13. Referencias visuales que te gusten</label>
-        <textarea id="referencias" name="referencias"
-          placeholder="Links, marcas, estilos o cuentas que te inspiren"></textarea>
-      </div>
+        <div class="field">
+          <label for="problemas">¿Qué problemas o necesidades resuelves?</label>
+          <textarea id="problemas" name="problemas" placeholder="Describe el problema principal que ayudas a resolver"></textarea>
+        </div>
+      </section>
 
-      <div class="actions">
-        <button type="submit" class="primary">Enviar respuestas</button>
-        <button type="reset" class="secondary">Limpiar</button>
-      </div>
+      <section class="form-section">
+        <div class="section-title">
+          <span class="dot"></span>
+          <h3>Cliente e inspiración</h3>
+        </div>
 
-      <p class="hint">
-        Al enviar se abrirá WhatsApp con solo las respuestas capturadas.
-      </p>
+        <div class="field">
+          <label for="cliente">Describe a tu cliente ideal</label>
+          <textarea id="cliente" name="cliente" placeholder="Edad, intereses, gustos, estilo de vida, tipo de persona..."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="colores">¿Qué atmósferas, estilos o colores te gustan?</label>
+          <textarea id="colores" name="colores" placeholder="Ej. minimalista, cinematográfico, tonos neutros, rojo, blanco, negro..."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="referencias">Referencias visuales que te gusten</label>
+          <textarea id="referencias" name="referencias" placeholder="Links, cuentas, marcas, estilos o ideas visuales que te inspiren"></textarea>
+        </div>
+      </section>
+
+      <div class="submit-box">
+        <div class="submit-text">
+          <h3>Listo para enviarlo</h3>
+          <p>
+            Al tocar <strong>Enviar respuestas</strong>, se abrirá WhatsApp con
+            la información capturada.
+          </p>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Enviar respuestas</button>
+          <button type="reset" class="secondary">Limpiar</button>
+        </div>
+      </div>
     </form>
   </main>
 
