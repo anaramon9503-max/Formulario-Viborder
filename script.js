@@ -24,20 +24,16 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const data = new FormData(form);
-  let message = "✨ BUSINESS PORTRAIT BRIEF ✨\n\n";
+  let message = "✨ VIBORDER BRIEF ✨\n\n";
 
   for (const [key, value] of data.entries()) {
     const clean = String(value).trim();
 
-    // Solo agrega los campos que sí fueron respondidos.
     if (clean) {
-      // Pregunta normal / respuesta en negritas en WhatsApp.
       message += `${labels[key] || key}\n*${clean}*\n\n`;
     }
   }
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-  // Más confiable en celular.
   window.location.href = url;
 });
