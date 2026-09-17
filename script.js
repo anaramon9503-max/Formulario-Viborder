@@ -20,29 +20,47 @@ const labels = {
   referencias: "Referencias visuales"
 };
 
-function buildWhatsAppUrl(message) {
+function buildWhatsAppWebUrl(message) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-function openWhatsAppBusiness(message) {
-  const fallbackUrl = buildWhatsAppUrl(message);
-  const isAndroid = /Android/i.test(navigator.userAgent);
+function buildWhatsAppAppUrl(message) {
+  // No forzamos un paquete concreto.
+  // Así Android puede abrir WhatsApp normal o WhatsApp Business,
+  // según cuál esté instalado o cuál elija el usuario.
+  return `whatsapp://send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+}
 
-  // En Android intentamos abrir específicamente WhatsApp Business.
-  // Si la app Business no está instalada o el navegador no admite el intent,
-  // Chrome usa el enlace wa.me como respaldo.
-  if (isAndroid) {
-    const intentUrl =
-      `intent://send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}` +
-      `#Intent;scheme=whatsapp;package=com.whatsapp.w4b;` +
-      `S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
+function openWhatsApp(message) {
+  const webUrl = buildWhatsAppWebUrl(message);
+  const appUrl = buildWhatsAppAppUrl(message);
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    window.location.href = intentUrl;
+  if (!isMobile) {
+    window.location.href = webUrl;
     return;
   }
 
-  // iPhone, computadora y otros dispositivos: enlace universal oficial.
-  window.location.href = fallbackUrl;
+  let appOpened = false;
+
+  const markAsOpened = () => {
+    if (document.hidden) {
+      appOpened = true;
+    }
+  };
+
+  document.addEventListener("visibilitychange", markAsOpened, { once: true });
+
+  // Al no especificar com.whatsapp ni com.whatsapp.w4b, Android puede
+  // mostrar el selector si están instalados WhatsApp normal y Business.
+  window.location.href = appUrl;
+
+  // Respaldo: si ningún WhatsApp atendió el enlace, usamos wa.me.
+  setTimeout(() => {
+    if (!appOpened && !document.hidden) {
+      window.location.href = webUrl;
+    }
+  }, 1600);
 }
 
 form.addEventListener("submit", (event) => {
@@ -59,5 +77,5 @@ form.addEventListener("submit", (event) => {
     }
   }
 
-  openWhatsAppBusiness(message);
+  openWhatsApp(message);
 });
