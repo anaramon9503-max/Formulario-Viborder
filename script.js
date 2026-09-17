@@ -20,6 +20,31 @@ const labels = {
   referencias: "Referencias visuales"
 };
 
+function buildWhatsAppUrl(message) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+function openWhatsAppBusiness(message) {
+  const fallbackUrl = buildWhatsAppUrl(message);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+
+  // En Android intentamos abrir específicamente WhatsApp Business.
+  // Si la app Business no está instalada o el navegador no admite el intent,
+  // Chrome usa el enlace wa.me como respaldo.
+  if (isAndroid) {
+    const intentUrl =
+      `intent://send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}` +
+      `#Intent;scheme=whatsapp;package=com.whatsapp.w4b;` +
+      `S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
+
+    window.location.href = intentUrl;
+    return;
+  }
+
+  // iPhone, computadora y otros dispositivos: enlace universal oficial.
+  window.location.href = fallbackUrl;
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -34,6 +59,5 @@ form.addEventListener("submit", (event) => {
     }
   }
 
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  window.location.href = url;
+  openWhatsAppBusiness(message);
 });
